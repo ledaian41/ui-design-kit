@@ -1,7 +1,9 @@
 {
-  "name": "react-color-palette",
+  "name": "ui-design-kit",
   "private": true,
   "version": "1.0.0",
+  "author": "An Le",
+  "repository": "https://github.com/ledaian41/ui-design-kit.git",
   "type": "module",
   "scripts": {
     "dev": "vite",
