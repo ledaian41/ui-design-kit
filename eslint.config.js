@@ -1,9 +1,9 @@
-const babelParser = require("@babel/eslint-parser");
-const react = require("eslint-plugin-react");
-const prettier =require("eslint-plugin-prettier");
-const configPrettier= require("eslint-config-prettier");
+import babelParser from "@babel/eslint-parser";
+import react from "eslint-plugin-react";
+import prettier from "eslint-plugin-prettier";
+import configPrettier from "eslint-config-prettier";
 
-module.exports = [
+export default [
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
@@ -19,8 +19,8 @@ module.exports = [
     },
     settings: {
       react: {
-        version: "detect"
-      }
+        version: "detect",
+      },
     },
     plugins: {
       react,
