@@ -3,8 +3,10 @@ import useScript from "../hook/useScript";
 import buttonConfig from "./buttonConfig.json";
 import ButtonSample from "./Button.jsx";
 
+const dfUrl = import.meta.env.VITE_DF_HOST;
+
 const PreviewPage = () => {
-  const ready = useScript("https://an-df.vercel.app/web-dynamic-form.js", {
+  const ready = useScript(`${dfUrl}/web-dynamic-form.js`, {
     id: "df",
     async: true,
   });

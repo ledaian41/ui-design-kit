@@ -3,19 +3,15 @@ import ColorForm from "./components/ColorForm";
 import ColorPalette from "./components/ColorPalette";
 import ColorContextProvider from "./context/ColorContextProvider";
 import PreviewPage from "./preview/PreviewPage.jsx";
-import "./App.css";
 
-const COLOR_SERVICE_API_HOST = "https://go-color-service.up.railway.app";
-const DF_HOST = "https://an-df.vercel.app/web-dynamic-form.js";
+const colorApiUrl = import.meta.env.VITE_COLOR_SERVICE_API_HOST;
 
 function App() {
   const [palette, setPalette] = useState({});
   const [textColor, setTextColor] = useState(null);
 
   const callApiRandomPalette = async () => {
-    const response = await fetch(
-      `https://go-color-service.up.railway.app/palette/6/random`
-    );
+    const response = await fetch(`${colorApiUrl}/palette/6/random`);
     const data = await response.json();
     await fetchTextColor(data?.primary);
     setPalette(data);
@@ -23,7 +19,7 @@ function App() {
 
   const callApiGeneratePalette = async (color) => {
     const response = await fetch(
-      `https://go-color-service.up.railway.app/palette/6/generate?base=${encodeURIComponent(color)}`
+      `${colorApiUrl}/palette/6/generate?base=${encodeURIComponent(color)}`
     );
     const data = await response.json();
     setPalette(data);
@@ -31,7 +27,7 @@ function App() {
 
   const fetchTextColor = async (color) => {
     const response = await fetch(
-      `https://go-color-service.up.railway.app/color/text?background=${encodeURIComponent(color)}`
+      `${colorApiUrl}/color/text?background=${encodeURIComponent(color)}`
     );
     const data = await response.json();
     setTextColor(data);
@@ -46,7 +42,12 @@ function App() {
 
   return (
     <div className="p-2 md:p-4 pt-8 grid gap-8">
-      <h1 className="font-bold text-center text-3xl">Welcome to ColorCraft</h1>
+      <div className="space-y-2">
+        <h1 className="font-bold text-center text-3xl">UI Design Kit</h1>
+        <h2 className="text-center text-lg text-gray-600">
+          Elevate your website and components with stunning color combinations
+        </h2>
+      </div>
 
       <ColorForm
         value={palette?.primary}
