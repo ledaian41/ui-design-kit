@@ -38,7 +38,7 @@ const PreviewPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto md:p-4 pb-20 grid md:grid-cols-[240px_1fr] gap-4">
+    <div className="max-w-7xl mx-auto md:p-4 pb-20 grid md:grid-cols-[180px_1fr] lg:grid-cols-[240px_1fr] gap-4">
       <div className="p-4 h-fit rounded border border-gray-200">
         <ComponentTree
           value={component}
@@ -64,10 +64,12 @@ const PreviewPage = () => {
             </div>
           )}
 
-          <div className="rounded p-4 border border-gray-200">
-            <h3 className="font-semibold text-lg mb-4">Design</h3>
-            <Component {...componentProps} />
-          </div>
+          {Component && (
+            <div className="rounded p-4 border border-gray-200">
+              <h3 className="font-semibold text-lg mb-4">Design</h3>
+              <Component {...componentProps} />
+            </div>
+          )}
         </div>
       </section>
     </div>
