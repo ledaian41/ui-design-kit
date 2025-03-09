@@ -14,7 +14,7 @@ const ColorForm = ({ value = "#000000", onSubmit, onRandom }) => {
   };
 
   return (
-    <div className={cn(styles.colorForm, "border border-[#d8d8d8] rounded")}>
+    <div className={cn(styles.colorForm, "border border-gray-200 rounded")}>
       <label>
         Pick a color
         <input
