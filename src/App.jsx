@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ColorForm from "./components/ColorForm";
-import ColorPalette from "./components/ColorPalette";
-import ColorContextProvider from "./context/ColorContextProvider";
-import PreviewPage from "./preview/PreviewPage.jsx";
+import ColorContextProvider from "@share/context/ColorContextProvider";
+import ColorForm from "@app/ColorForm";
+import ColorPalette from "@app/ColorPalette";
+import PreviewPage from "@preview/PreviewPage";
 
 const colorApiUrl = import.meta.env.VITE_COLOR_SERVICE_API_HOST;
 

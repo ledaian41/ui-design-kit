@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
-import ColorContext from "./ColorContext";
-import generateVariableObject from "../utils/generateVariableObject";
+import ColorContext from "@share/context/ColorContext";
+import generateVariableObject from "@share/utils/generateVariableObject";
 
 const ColorContextProvider = ({ children, palette, textColor }) => {
   const store = useMemo(() => ({ palette, textColor }), [palette, textColor]);

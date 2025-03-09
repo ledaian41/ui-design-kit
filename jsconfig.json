@@ -2,6 +2,10 @@
   "compilerOptions": {
     "baseUrl" : "./src",
     "paths": {
+      "@assets/*": ["./assets/*"],
+      "@app/*": ["./app/*"],
+      "@preview/*": ["./preview/*"],
+      "@share/*": ["./share/*"]
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import cn from "../utils/cn";
+import { useColorContext } from "@share/context/ColorContext";
+import cn from "@share/utils/cn";
 import styles from "./Button.module.css";
-import { useColorContext } from "../context/ColorContext.js";
 
 const Button = ({ className, children, style }) => (
   <button className={cn(styles.button, className)} style={style}>

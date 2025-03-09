@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import cn from "@share/utils/cn";
 import styles from "./ColorForm.module.css";
-import cn from "../utils/cn.js";
 
 const ColorForm = ({ value = "#000000", onSubmit, onRandom }) => {
   const [baseColor, setBaseColor] = useState(value);

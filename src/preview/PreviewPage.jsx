@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import useScript from "../hook/useScript";
-import buttonConfig from "./buttonConfig.json";
-import ButtonSample from "./Button.jsx";
+import useScript from "@share/hook/useScript";
+import ButtonSample from "@preview/components/button/Button";
+import buttonConfig from "@preview/components/button/buttonConfig.json";
 
 const dfUrl = import.meta.env.VITE_DF_HOST;
 
