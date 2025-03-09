@@ -1,0 +1,28 @@
+.button {
+  background: var(--primary, #000000);
+  color: #ffffff;
+  padding: .5rem 1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+
+  &:global(.secondary) {
+    background: var(--complementary, #000000);
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &:global(.w-full) {
+    width: 100%;
+  }
+
+  &:global(.round) {
+    border-radius: 6px;
+  }
+
+  &:global(.circle) {
+    border-radius: 999px;
+  }
+}
