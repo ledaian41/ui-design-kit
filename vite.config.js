@@ -16,8 +16,9 @@ export default defineConfig({
     alias: {
       "@assets": path.resolve(__dirname, "src/assets"),
       "@app": path.resolve(__dirname, "src/app"),
-      "@preview": path.resolve(__dirname, "src/preview"),
+      "@design": path.resolve(__dirname, "src/design"),
       "@share": path.resolve(__dirname, "src/share"),
+      "@service": path.resolve(__dirname, "src/service"),
     },
   },
 });

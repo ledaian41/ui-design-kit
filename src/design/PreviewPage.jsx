@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import useScript from "@share/hook/useScript";
-import sourceMap, { loadSettingSchema } from "@preview/source-map";
-import ComponentTree from "@preview/ComponentTree";
+import sourceMap, { loadSettingSchema } from "@design/source-map";
+import ComponentTree from "@design/ComponentTree";
 
 const dfUrl = import.meta.env.VITE_DF_HOST;
 

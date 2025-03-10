@@ -4,8 +4,9 @@
     "paths": {
       "@assets/*": ["./assets/*"],
       "@app/*": ["./app/*"],
-      "@preview/*": ["./preview/*"],
-      "@share/*": ["./share/*"]
+      "@design/*": ["./design/*"],
+      "@share/*": ["./share/*"],
+      "@service/*": ["./service/*"]
     }
   }
 }

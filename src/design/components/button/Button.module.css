@@ -8,14 +8,6 @@
     filter: brightness(0.9);
   }
 
-  &:global(.round) {
-    border-radius: 6px;
-  }
-
-  &:global(.circle) {
-    border-radius: 999px;
-  }
-
   &:global(.btn-outline) {
     background: transparent;
     color: var(--btn-color, #000000);

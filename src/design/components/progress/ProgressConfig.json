@@ -1,0 +1,52 @@
+{
+  "options": {
+    "theme": "light",
+    "bordered": false,
+    "autoSave": true
+  },
+  "fields": [
+    {
+      "id": "showLabel",
+      "component": "Switch",
+      "label": "Show label within progress bar"
+    },
+    {
+      "component": "Flex",
+      "label": "Progress Value",
+      "fields": [
+        {
+          "component": "Flex",
+          "fields": [
+            {
+              "id": "progressSlider",
+              "pid": "progress",
+              "component": "Slider",
+              "options": {
+                "min": 0,
+                "max": 100
+              }
+            },
+            {
+              "id": "progressInput",
+              "pid": "progress",
+              "component": "NumberInput",
+              "options": {
+                "min": 0,
+                "max": 100
+              }
+            }
+          ],
+          "style": {
+            "display": "grid",
+            "gridTemplateColumns": "1fr 80px",
+            "alignItems": "center",
+            "gap": 16
+          }
+        }
+      ],
+      "style": {
+        "display": "grid"
+      }
+    }
+  ]
+}

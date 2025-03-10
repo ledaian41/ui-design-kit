@@ -3,32 +3,43 @@ import { lazy } from "react";
 export default {
   badge: {
     label: "Badge",
+    disabled: true,
   },
   button: {
     label: "Button",
-    component: lazy(() => import("@preview/components/button/Button")),
-    setting: () => import("@preview/components/button/buttonConfig.json"),
+    component: lazy(() => import("@design/components/button/Button")),
+    setting: () => import("@design/components/button/buttonConfig.json"),
+    new: true,
   },
   card: {
     label: "Card",
+    disabled: true,
   },
   chart: {
     label: "Chart",
+    disabled: true,
   },
   progress: {
     label: "Progress",
+    component: lazy(() => import("@design/components/progress/Progress")),
+    setting: () => import("@design/components/progress/ProgressConfig.json"),
+    new: true,
   },
   slider: {
     label: "Slider",
+    disabled: true,
   },
   tabs: {
     label: "Tabs",
+    disabled: true,
   },
   toggle: {
     label: "Toggle",
+    disabled: true,
   },
   tooltip: {
     label: "Tooltip",
+    disabled: true,
   },
 };
 

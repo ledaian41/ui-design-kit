@@ -1,41 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorContextProvider from "@share/context/ColorContextProvider";
 import ColorForm from "@app/ColorForm";
 import ColorPalette from "@app/ColorPalette";
-import PreviewPage from "@preview/PreviewPage";
-
-const colorApiUrl = import.meta.env.VITE_COLOR_SERVICE_API_HOST;
+import PreviewPage from "@design/PreviewPage";
+import {
+  fetchTextColor,
+  randomColorPalette,
+  generateColorPalette,
+} from "@service/colorService";
 
 function App() {
   const [palette, setPalette] = useState({});
   const [textColor, setTextColor] = useState(null);
 
-  const callApiRandomPalette = async () => {
-    const response = await fetch(`${colorApiUrl}/palette/6/random`);
-    const data = await response.json();
-    await fetchTextColor(data?.primary);
-    setPalette(data);
+  useEffect(() => {
+    generatePalette("#3486dc");
+  }, []);
+
+  const randomColor = async () => {
+    const colorPalette = await randomColorPalette();
+    const tColor = await fetchTextColor(colorPalette?.primary);
+    setTextColor(tColor);
+    setPalette(colorPalette);
   };
 
-  const callApiGeneratePalette = async (color) => {
-    const response = await fetch(
-      `${colorApiUrl}/palette/6/generate?base=${encodeURIComponent(color)}`
-    );
-    const data = await response.json();
-    setPalette(data);
-  };
-
-  const fetchTextColor = async (color) => {
-    const response = await fetch(
-      `${colorApiUrl}/color/text?background=${encodeURIComponent(color)}`
-    );
-    const data = await response.json();
-    setTextColor(data);
-  };
-
-  const generateColorPalette = (color) => {
-    callApiGeneratePalette(color);
-    fetchTextColor(color);
+  const generatePalette = async (color) => {
+    const colorPalette = await generateColorPalette(color);
+    const tColor = await fetchTextColor(colorPalette?.primary);
+    setTextColor(tColor);
+    setPalette(colorPalette);
   };
 
   const colors = Object.values(palette);
@@ -51,8 +44,8 @@ function App() {
 
       <ColorForm
         value={palette?.primary}
-        onSubmit={generateColorPalette}
-        onRandom={callApiRandomPalette}
+        onSubmit={generatePalette}
+        onRandom={randomColor}
       />
 
       {colors.length > 0 && (
