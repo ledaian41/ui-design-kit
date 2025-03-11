@@ -3,7 +3,8 @@ import { lazy } from "react";
 export default {
   badge: {
     label: "Badge",
-    disabled: true,
+    component: lazy(() => import("@design/components/badge/Badge")),
+    new: true,
   },
   button: {
     label: "Button",
@@ -35,10 +36,6 @@ export default {
   },
   toggle: {
     label: "Toggle",
-    disabled: true,
-  },
-  tooltip: {
-    label: "Tooltip",
     disabled: true,
   },
 };

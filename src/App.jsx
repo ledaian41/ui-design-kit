@@ -8,6 +8,7 @@ import {
   randomColorPalette,
   generateColorPalette,
 } from "@service/colorService";
+import Tooltip from "@design/components/tooltip/Tooltip.jsx";
 
 function App() {
   const [palette, setPalette] = useState({});
